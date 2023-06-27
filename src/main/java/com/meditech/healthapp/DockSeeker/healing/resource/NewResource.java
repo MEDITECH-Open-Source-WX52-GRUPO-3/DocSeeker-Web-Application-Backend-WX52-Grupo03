@@ -1,11 +1,7 @@
 package com.meditech.healthapp.DockSeeker.healing.resource;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import lombok.*;
-import org.springframework.stereotype.Service;
+
 
 @Getter
 @Setter
