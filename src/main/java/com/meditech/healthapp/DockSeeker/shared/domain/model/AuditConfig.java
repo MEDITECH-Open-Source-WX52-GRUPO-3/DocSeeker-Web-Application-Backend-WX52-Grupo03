@@ -2,13 +2,15 @@ package com.meditech.healthapp.DockSeeker.shared.domain.model;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.domain.AuditorAware;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @Configuration
 @EnableJpaAuditing
-public class PersistenceConfig {
+public class AuditConfig {
+
     @Bean
-    public AuditorAwareImpl auditorProvider(){
+    public AuditorAware<String> auditorAware() {
         return new AuditorAwareImpl();
     }
 }
