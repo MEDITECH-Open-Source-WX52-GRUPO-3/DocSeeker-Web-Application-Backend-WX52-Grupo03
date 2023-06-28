@@ -64,11 +64,34 @@ public class NewServiceImpl implements NewService {
 
     @Override
     public New update(Long newId, New request) {
-        return null;
+
+        //Violation
+        Set<ConstraintViolation<New>> violations = validator.validate(request);
+        if(!violations.isEmpty())
+            throw new ResourceValidationException(ENTITY, violations);
+
+        // Validation --> Name
+        New newWithName = newRepository.findByTitle(request.getTitle());
+        if(newWithName != null && !newWithName.getId().equals(newId))
+            throw new ResourceValidationException(ENTITY,
+                    "An New with the same title already exits.");
+
+        return newRepository.findById(newId).map(newapp ->
+                newRepository.save(newapp
+                        .withTitle(request.getTitle())
+                        .withImage(request.getImage())
+                        .withDescription(request.getDescription())
+                        .withInfo(request.getInfo())
+                        .withViews(request.getViews())))
+                .orElseThrow(()->new ResourceNotFoundException(ENTITY,newId));
+
     }
 
     @Override
     public ResponseEntity<?> delete(Long newId) {
-        return null;
+        return newRepository.findById(newId).map(newapp->{
+            newRepository.delete(newapp);
+            return ResponseEntity.ok().build();
+        }).orElseThrow(()-> new ResourceNotFoundException(ENTITY, newId));
     }
 }
