@@ -19,5 +19,5 @@ public interface ReviewService {
 
     Review update(Long reviewId, Review request);
 
-    ResponseEntity<?> delte(Long reviewId);
+    ResponseEntity<?> delete(Long reviewId);
 }

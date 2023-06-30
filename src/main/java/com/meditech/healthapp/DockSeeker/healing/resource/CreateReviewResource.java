@@ -1,9 +1,8 @@
 package com.meditech.healthapp.DockSeeker.healing.resource;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @Getter
@@ -13,10 +12,27 @@ import lombok.*;
 @AllArgsConstructor
 public class CreateReviewResource {
 
+    @NotBlank
+    @NotNull(message = "hourId is required")
     private String profilePhotoUrl;
+
+    @NotBlank
+    @NotNull(message = "hourId is required")
     private String customerName;
+
+    @NotBlank
+    @NotNull(message = "hourId is required")
     private String customerReview;
+
+    @NotBlank
+    @NotNull(message = "hourId is required")
     private int customerScore;
-    private  int idPatient;
-    private int idDoctor;
+
+    @NotBlank
+    @NotNull(message = "hourId is required")
+    private Long patientId;
+
+    @NotBlank
+    @NotNull(message = "hourId is required")
+    private Long doctorId;
 }

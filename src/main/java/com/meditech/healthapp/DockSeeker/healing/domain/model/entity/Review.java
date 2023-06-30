@@ -29,10 +29,13 @@ public class Review extends AuditModel {
     @Column(name = "customerScore")
     private int customerScore;
 
-    @Column(name = "idPatient")
-    private  int idPatient;
+    @Column(name = "patientId")
+    private Long patientId;
 
-    @Column(name = "idDoctor")
-    private int idDoctor;
+    @Column(name = "doctorId")
+    private Long doctorId;
+
+
+
 
 }

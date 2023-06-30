@@ -1,7 +1,6 @@
 package com.meditech.healthapp.DockSeeker.healing.mapping;
 
 import com.meditech.healthapp.DockSeeker.healing.domain.model.entity.Review;
-import com.meditech.healthapp.DockSeeker.healing.resource.CreateNewResource;
 import com.meditech.healthapp.DockSeeker.healing.resource.CreateReviewResource;
 import com.meditech.healthapp.DockSeeker.healing.resource.ReviewResource;
 import com.meditech.healthapp.DockSeeker.healing.resource.UpdateReviewResource;
@@ -11,9 +10,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class ReviewMapper {
+public class ReviewMapper implements Serializable {
 
     @Autowired
     EnhancedModelMapper mapper;
