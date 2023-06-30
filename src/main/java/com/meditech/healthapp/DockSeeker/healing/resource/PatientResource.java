@@ -15,7 +15,7 @@ public class PatientResource {
     private String genre;
     private String birthday;
     private String email;
-    private Long cellphone;
+    private String cellphone;
     private String password;
     private String photo;
 }

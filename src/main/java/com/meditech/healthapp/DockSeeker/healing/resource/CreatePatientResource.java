@@ -33,7 +33,7 @@ public class CreatePatientResource {
 
     @NotBlank
     @NotNull(message = "cellphone is required")
-    private Long cellphone;
+    private String cellphone;
 
     @NotBlank
     @NotNull(message = "password is required")

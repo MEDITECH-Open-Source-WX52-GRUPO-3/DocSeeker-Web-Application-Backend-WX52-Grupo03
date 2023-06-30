@@ -32,7 +32,7 @@ public class Patient extends AuditModel {
     private String email;
 
     @Column(name = "cellphone", nullable = false)
-    private Long cellphone;
+    private String cellphone;
 
     @Column(name = "password", nullable = false)
     private String password;
