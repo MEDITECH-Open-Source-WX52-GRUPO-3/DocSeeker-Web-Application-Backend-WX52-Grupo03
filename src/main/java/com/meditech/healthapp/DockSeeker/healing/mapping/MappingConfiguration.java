@@ -10,6 +10,9 @@ public class MappingConfiguration {
     public NewMapper newMapper(){
         return new NewMapper();
     }
+
+    @Bean
+    public PatientMapper patientMapper() { return new PatientMapper();}
     @Bean
     public DateMapper dateMapper(){
         return new DateMapper();

@@ -47,7 +47,7 @@ public class NewController {
     }
 
     @GetMapping("{newId}")
-    @Operation(summary = "Get students By Id")
+    @Operation(summary = "Get news By Id")
     public NewResource getNewById(@PathVariable Long newId){
         return mapper.toResource(newService.getById(newId));
     }
