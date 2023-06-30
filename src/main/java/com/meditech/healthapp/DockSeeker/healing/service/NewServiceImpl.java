@@ -54,7 +54,6 @@ public class NewServiceImpl implements NewService {
         }
         //Name Uniques Validation
         New newWithName = newRepository.findByTitle(newapp.getTitle());
-
         if(newWithName != null)
             throw new ResourceValidationException(ENTITY,"AN new with the same name already exits");
 
