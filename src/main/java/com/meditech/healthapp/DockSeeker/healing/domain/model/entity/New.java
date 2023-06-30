@@ -20,7 +20,7 @@ public class New extends AuditModel {
     @Column(name="image", nullable = false)
     private String image;
 
-    @Column(name = "title", nullable = false, length = 100)
+    @Column(name = "title", nullable = false, length = 1000)
     private String title;
 
     @Column(name = "descripcion", nullable = false)
