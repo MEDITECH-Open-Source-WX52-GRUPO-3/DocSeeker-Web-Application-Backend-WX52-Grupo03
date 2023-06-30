@@ -10,4 +10,7 @@ public class MappingConfiguration {
     public NewMapper newMapper(){
         return new NewMapper();
     }
+
+    @Bean
+    public DoctorMapper doctorMapper() { return new DoctorMapper();}
 }

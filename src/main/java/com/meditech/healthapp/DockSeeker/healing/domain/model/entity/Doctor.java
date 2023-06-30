@@ -42,6 +42,9 @@ public class Doctor extends AuditModel {
     @Column(name = "years")
     private Long years;
 
+    @Column(name = "age")
+    private Long age;
+
     @Column(name = "cost")
     private Long cost;
 
@@ -61,8 +64,10 @@ public class Doctor extends AuditModel {
 @Getter
 @Setter
 @With
+@NoArgsConstructor
+@AllArgsConstructor
 class AvailableHours {
-    @Column(name = "hour_id")
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "hours")
@@ -73,8 +78,10 @@ class AvailableHours {
 @Getter
 @Setter
 @With
+@NoArgsConstructor
+@AllArgsConstructor
 class Education {
-    @Column(name = "education_id")
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "name")
